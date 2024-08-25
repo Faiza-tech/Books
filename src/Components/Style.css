@@ -1,0 +1,339 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+    /* font-weight: 300;*/
+}
+
+:root {
+    --primary-color: #755139;
+    --secondary-color: #D4B996FF;
+}
+
+body {
+    background-color: var(--primary-color);
+}
+
+html {
+    font-size: 75.5%;
+}
+
+.header {
+    width: 100%;
+    height: 500px;
+    color: var(--secondary-color);
+    box-shadow: 0 5px 10px var(--secondary-color);
+    display: flex;
+    align-items: center;
+
+    position: relative;
+}
+
+.header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(0, 0, 0, 0.5),
+            rgba(0, 0, 0, 0.5)),
+        url(../assets/book1.jpg);
+    clip-path: circle(60% at left 300px);
+    z-index: -1;
+}
+
+.row2 {
+    position: absolute;
+    top: 10px;
+    right: 150px;
+    text-align: center;
+}
+
+.row2 h2 {
+    font-size: 3rem;
+    margin: 20px 0 15px 0;
+}
+
+.row2 img {
+    margin-top: 30px;
+}
+
+.row1 h1 {
+    font-size: 3rem;
+    text-align: center;
+    margin-left: 35px;
+    font-family: "Bodoni Moda", serif;
+}
+
+.search {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.search input {
+    outline: 0;
+    border: 0;
+    width: 350px;
+    height: 35px;
+    padding: 0 .5rem;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.search button {
+    outline: 0;
+    border: 0;
+    height: 35px;
+    padding: 0 .5rem;
+}
+
+.container {
+    width: 65%;
+    margin: 0 auto;
+    margin-top: 25px;
+    display: grid;
+    /* grid-template-columns: repeat(4,minmax(200px,0.5fr));*/
+    grid-template-columns: repeat(auto-fit, minmax(200px, 0.5fr));
+    grid-gap: 20px;
+    box-sizing: border-box;
+}
+
+.card {
+    background-color: var(--secondary-color);
+    border-radius: 1rem;
+    padding: .5rem;
+    margin-bottom: 10px;
+    box-shadow: 0 5px 5px rgba(212, 185, 150, 0.5);
+    transition: .5s;
+    text-align: center;
+    position: relative;
+}
+
+.card:hover {
+    transform: scale(0.9);
+    /* background-color: rgba(162, 161, 94, 0.5);*/
+    background-color: rgba(251, 251, 251, 0.8);
+}
+
+.card img {
+    width: 100%;
+    height: 200px;
+    border-radius: 1rem 1rem 0 0;
+}
+
+.card .bottom {
+    display: flex;
+    flex-direction: column;
+}
+
+.card .bottom .title {
+    font-size: 14px;
+    margin-bottom: 28px;
+}
+
+.card .bottom .amount {
+    bottom: 10px;
+    position: absolute;
+    left: 10px;
+    right: 10px;
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    font-size: 13px;
+    font-weight: bold;
+    padding: .2rem;
+}
+
+/* Overlay styling to cover the full viewport */
+.overlay {
+    min-height: 100vh;
+    width: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.1));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Modal container styling */
+.overlay-inner {
+    background: white;
+    width: 700px;
+    max-height: 80vh; /* Ensure the modal doesn't exceed 80% of the viewport height */
+    padding: 1.5rem;
+    position: relative;
+    overflow-y: auto; /* Allow vertical scrolling if content exceeds max height */
+    font-size: 1.3rem;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Close button styling */
+.overlay-inner .close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    outline: none;
+    border: none;
+    font-size: 17px;
+    background-color: transparent;
+}
+
+/* Content box inside modal */
+.overlay-inner .inner-box {
+    margin-top: 25px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; /* Allows wrapping of content when necessary */
+}
+
+/* Thumbnail image styling */
+.overlay-inner .inner-box img {
+    margin-right: 20px;
+}
+
+/* Author styling */
+.overlay-inner .inner-box h3 {
+    margin-top: 10px;
+    color: green;
+}
+
+/* Publisher styling */
+.overlay-inner .inner-box h4 {
+    color: blue;
+}
+
+/* Button styling */
+.overlay-inner .inner-box button {
+    outline: none;
+    border: none;
+    width: 100px;
+    border-radius: 5px;
+    background-color: #24a0ed;
+    color: white;
+    font-weight: bold;
+    padding: .3rem .5rem;
+}
+
+/* Description styling */
+.overlay-inner .description {
+   /* margin-top: 2rem;*/
+    text-align: justify;
+    font-size: 14px;
+    overflow-y: auto; /* Allow scrolling for long descriptions */
+    max-height: 300px; /* Limit the height of the description box */
+    margin: 2rem 15px 1rem;
+  padding: 0 15px;
+}
+
+
+
+/* FOOTER */
+.shadow-line {
+    margin-top: 20px;
+    width: 100%;
+    height: 10px;
+    /* Adjust height as needed for the shadow */
+    box-shadow: 0 -5px 10px var(--secondary-color);
+    /* Inverted shadow */
+}
+
+.footer {
+    background-color: var(--primary-color);
+    /*color: var(--secondary-color);*/
+    color: #3C2B15;
+    text-align: center;
+    padding: 20px 0;
+    position: relative;
+}
+
+.footer img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.footer p {
+    margin-top: 10px;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.footer-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    /* 3 columns with equal width */
+    gap: 20px;
+    /* Space between columns */
+    padding: 20px;
+    /* Add some padding to the container */
+    max-width: 1200px;
+    /* Optional: Max width for the container */
+    margin: 0 auto;
+    /* Center the container */
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+}
+
+.footer-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* justify-content: center; /* Center all content vertically */
+}
+
+.col1 {
+    justify-content: center;
+    /* Center all content vertically */
+}
+
+/* Rotated Text */
+.rotate-text {
+    font-size: 38px;
+    font-weight: bold;
+    color: var(--secondary-color);
+    transform: rotate(-50deg);
+    /* Rotate text to -50 degrees */
+    text-transform: uppercase;
+    /* Capitalize the text */
+    letter-spacing: 5px;
+    /* Add spacing between letters */
+    margin: 0;
+    text-align: center;
+    position: relative;
+    top: 20px;
+    /* Move the text a bit down */
+}
+
+/* Wave container */
+.wave-container {
+    position: relative;
+    width: 100%;
+    height: auto;
+}
+
+.wave-image {
+    width: 100%;
+    height: auto;
+    position: relative;
+    z-index: 0;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .footer-container {
+        grid-template-columns: 1fr;
+        /* Stack columns on smaller screens */
+        text-align: left;
+    }
+}
