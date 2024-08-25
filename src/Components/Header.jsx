@@ -36,7 +36,7 @@ const Header = () => {
     <>
       <div className="header">
         <div className="row1">
-          <h1>A room without books is like <br /> a body without a soul.</h1> {/* Display a quote */}
+          <h1>A room without books is like <br /> a body without a soul.</h1> {/* Display a quote 'If you don’t like to read, you haven’t found the right book.'*/}
         </div>
 
         <div className="row2">

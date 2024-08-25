@@ -167,10 +167,12 @@ html {
 .overlay-inner {
     background: white;
     width: 700px;
-    max-height: 80vh; /* Ensure the modal doesn't exceed 80% of the viewport height */
+    max-height: 80vh;
+    /* Ensure the modal doesn't exceed 80% of the viewport height */
     padding: 1.5rem;
     position: relative;
-    overflow-y: auto; /* Allow vertical scrolling if content exceeds max height */
+    overflow-y: auto;
+    /* Allow vertical scrolling if content exceeds max height */
     font-size: 1.3rem;
     display: flex;
     flex-direction: column;
@@ -192,7 +194,8 @@ html {
     margin-top: 25px;
     display: flex;
     justify-content: center;
-    flex-wrap: wrap; /* Allows wrapping of content when necessary */
+    flex-wrap: wrap;
+    /* Allows wrapping of content when necessary */
 }
 
 /* Thumbnail image styling */
@@ -225,13 +228,15 @@ html {
 
 /* Description styling */
 .overlay-inner .description {
-   /* margin-top: 2rem;*/
+    /* margin-top: 2rem;*/
     text-align: justify;
     font-size: 14px;
-    overflow-y: auto; /* Allow scrolling for long descriptions */
-    max-height: 300px; /* Limit the height of the description box */
+    overflow-y: auto;
+    /* Allow scrolling for long descriptions */
+    max-height: 300px;
+    /* Limit the height of the description box */
     margin: 2rem 15px 1rem;
-  padding: 0 15px;
+    padding: 0 15px;
 }
 
 
@@ -329,11 +334,109 @@ html {
     z-index: 0;
 }
 
-/* Responsive design */
+
+
+/* Media Queries for Tablet and Mobile */
 @media (max-width: 768px) {
-    .footer-container {
-        grid-template-columns: 1fr;
-        /* Stack columns on smaller screens */
+
+    .header {
+        width: 100%;
+        height: 250px;
+
+    }
+
+    .header::before {
+        clip-path: none;
+        /* Remove clip-path for better visibility on smaller screens */
+        background-size: cover;
+    }
+
+    .row2 {
+        position: absolute;
+        top: 20px;
+        right: 90px;
+        text-align: center;
+    }
+
+    .row1 h1,
+    .row2 h2 {
+        font-size: 2rem;
+    }
+
+    .row2 .search input {
+        outline: 0;
+        border: 0;
+        width: 210px;
+        height: 35px;
+        padding: 0 .5rem;
+        font-size: 15px;
+        font-weight: bold;
+    }
+
+    .row2 img {
+        display: none;
+    }
+
+    .card img {
+        height: 150px;
+        /* Reduce image size */
+    }
+
+    .rotate-text {
+        font-size: 1.5rem;
+    }
+
+    .col1,
+    .col2,
+    .col3 {
+        display: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    .wave-image {
+        display: none;
+    }
+
+}
+
+@media (max-width: 480px) {
+    .header {
+        width: 100%;
+        height: 250px;
+
+    }
+
+    .row1 h1 {
         text-align: left;
+        padding-top: 130px;
+    }
+
+    .row1 h1,
+    .row2 h2 {
+        font-size: 1.8rem;
+    }
+
+    .row2 {
+        position: absolute;
+        top: 3px;
+        right: 30px;
+        text-align: center;
+    }
+
+    .card img {
+        height: 120px;
+    }
+
+    .rotate-text {
+        font-size: 1.2rem;
+    }
+
+    .footer-container {
+        padding: 5px;
+    }
+
+    .footer p {
+        font-size: 0.9rem;
     }
 }

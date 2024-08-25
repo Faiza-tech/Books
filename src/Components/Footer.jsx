@@ -11,6 +11,7 @@ const Footer = () => {
             <div className="footer-column col1">
               <h1 className="rotate-text">Books</h1>
             </div>
+
             <div className="footer-column col2">
               <h2>Overview</h2>
               <p>About</p>
@@ -18,15 +19,15 @@ const Footer = () => {
               <p>Contact</p>
               <p>Terms of use</p>
               <p>Privacy policy</p>
-
             </div>
+
             <div className="footer-column col3">
               <h2>Community</h2>
               <p>Support</p>
               <p>Help</p>
               <p>Community Central</p>
-
             </div>
+            
           </div>
         </div>
         <img src={Wave} alt="Wave" className="wave-image" />
